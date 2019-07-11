@@ -11,6 +11,22 @@ class Options {
         this.c = c;
         this.describe = describe;
     }
+
+    public char getC() {
+        return c;
+    }
+
+    public void setC(char c) {
+        this.c = c;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 }
 
 public class MultipleChoice extends Question {
