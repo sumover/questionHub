@@ -22,6 +22,9 @@ public abstract class User {
         this.user_type = type;
     }
 
+    public User() {
+    }
+
     public USER_TYPE getUser_type() {
         return user_type;
     }

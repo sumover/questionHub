@@ -4,27 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 class Options {
-    char c;
-    String describe;
+    public char c;
+    public String describe;
 
     public Options(char c, String describe) {
         this.c = c;
-        this.describe = describe;
-    }
-
-    public char getC() {
-        return c;
-    }
-
-    public void setC(char c) {
-        this.c = c;
-    }
-
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
         this.describe = describe;
     }
 }
@@ -36,6 +20,9 @@ public class MultipleChoice extends Question {
     public MultipleChoice(int score, String describe, List<Options> options) {
         super(score, QUESTION_TYPE.multiple_choice);
         options = new LinkedList<Options>();
+    }
+
+    public MultipleChoice() {
     }
 
     public void addOptions(char c, String describes) {

@@ -16,6 +16,9 @@ public abstract class Question {
         this.id = QUESTION_NUM++;
     }
 
+    public Question() {
+    }
+
     public int getId() {
         return id;
     }
