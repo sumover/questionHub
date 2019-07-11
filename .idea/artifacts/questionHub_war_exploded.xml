@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="questionHub:war exploded">
+    <output-path>$PROJECT_DIR$/target/questionHub</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="questionHub" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/questionHub/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="questionHub/web/Web" />
+    </root>
+  </artifact>
+</component>
