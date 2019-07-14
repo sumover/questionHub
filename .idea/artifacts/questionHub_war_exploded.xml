@@ -1,13 +1,21 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="questionHub:war exploded">
     <output-path>$PROJECT_DIR$/target/questionHub</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>questionHub</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="questionHub" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:2.3" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.15" />
         </element>
       </element>
       <element id="directory" name="META-INF">

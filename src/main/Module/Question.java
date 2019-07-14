@@ -1,19 +1,15 @@
 package main.Module;
 
-enum QUESTION_TYPE {
-    multiple_choice,
-}
 
 public abstract class Question {
     private int id;
     private int score;
-    QUESTION_TYPE type;
+    private String type;
     private static int QUESTION_NUM = 0;
 
-    public Question(int score, QUESTION_TYPE type) {
+    public Question(int score, String type) {
         this.score = score;
         this.type = type;
-        this.id = QUESTION_NUM++;
     }
 
     public Question() {
@@ -32,7 +28,15 @@ public abstract class Question {
         this.score = score;
     }
 
-    public QUESTION_TYPE getType() {
+    public String getType() {
         return type;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

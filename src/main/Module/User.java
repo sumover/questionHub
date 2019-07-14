@@ -11,22 +11,25 @@ public abstract class User {
     private Date registerDate;
     private String name;
     private String password;
-    private USER_TYPE user_type;
+    private USER_TYPE userType;
     private static int USER_NUM = 0;
 
     public User(Date registerDate, String name, String password, USER_TYPE type) {
         this.registerDate = registerDate;
         this.name = name;
         this.password = password;
-        this.id = USER_NUM++;
-        this.user_type = type;
+        this.userType = type;
+    }
+
+    public USER_TYPE getUserType() {
+        return userType;
+    }
+
+    public void setUserType(USER_TYPE userType) {
+        this.userType = userType;
     }
 
     public User() {
-    }
-
-    public USER_TYPE getUser_type() {
-        return user_type;
     }
 
     public int getId() {
@@ -55,5 +58,9 @@ public abstract class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

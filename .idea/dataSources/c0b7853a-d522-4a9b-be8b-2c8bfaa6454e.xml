@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="seqh_db@192.168.132.2">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.3">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
     <root id="1"/>
     <schema id="2" parent="1" name="seqh_db">
       <Current>1</Current>
@@ -18,17 +18,17 @@
     </table>
     <column id="11" parent="10" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="12" parent="10" name="student_num">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
     <column id="13" parent="10" name="password">
       <Position>3</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;123456&apos;</DefaultExpression>
     </column>

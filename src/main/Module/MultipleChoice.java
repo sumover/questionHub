@@ -18,7 +18,7 @@ public class MultipleChoice extends Question {
     List<Options> options;
 
     public MultipleChoice(int score, String describe, List<Options> options) {
-        super(score, QUESTION_TYPE.multiple_choice);
+        super(score, "MultipleChoice ");
         options = new LinkedList<Options>();
     }
 
