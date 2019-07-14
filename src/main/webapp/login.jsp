@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="loginFormDiv">
-    <form method="post" action="/loginDispatcher">
+    <form method="post" action="loginDispatcher">
         <fieldset>
             <legend>用户登录</legend>
             <table>

@@ -11,7 +11,6 @@ public class TestSQLMain {
         Connector.connect_static();
         Connector connector = Connector.getInstance();
         Connection connection = connector.getConnection();
-
         Connector.disconnect_static();
     }
 }

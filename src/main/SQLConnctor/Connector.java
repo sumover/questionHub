@@ -121,6 +121,11 @@ public class Connector {
         return list.toArray(new Integer[list.size()]);
     }
 
+    /**
+     * @param sql        要被注入的sql语句
+     * @param parameters 被注入的parameter
+     * @return 删除的数量
+     */
     public int deleteValues(String sql, String[] parameters) {
         int deleteNum = 0;
         try {
