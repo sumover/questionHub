@@ -54,6 +54,9 @@ public abstract class QuestionOperator {
         return autoSetId ? 1 : qid;
     }
 
+    /**
+     * @param id 要被删除的类型的题的id
+     */
     public abstract void deleteTypeQuestion(int id);
 
     public void deleteQuestion(Question question) {
