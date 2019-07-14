@@ -22,8 +22,8 @@ public class AddUser {
      */
     int add(User user) {
         int id = connector.insertValues(
-                "insert into user_data (name, password, register_date) values (?,?,current_date);",
-                new String[]{user.getName(), user.getPassword()}
+                "insert into web_note_databases.users (name, password, register_date, type) values (?,?,current_date ,?);",
+                new String[]{user.getName(), user.getPassword(), String.valueOf(user.getUserType())}
         );
         if (autoSetId) user.setId(id);
         return autoSetId ? 1 : id;

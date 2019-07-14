@@ -8,5 +8,6 @@ public class Teacher extends User {
     }
 
     public Teacher() {
+        super.setUserType(USER_TYPE.teacher);
     }
 }

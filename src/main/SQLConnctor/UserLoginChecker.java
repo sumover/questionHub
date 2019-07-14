@@ -1,5 +1,7 @@
 package main.SQLConnctor;
 
+import main.Module.Student;
+import main.Module.Teacher;
 import main.Module.User;
 
 import java.sql.ResultSet;
@@ -20,6 +22,12 @@ public class UserLoginChecker {
         );
         try {
             if (userSet.next()) {
+                String type = userSet.getString(5);
+                if (type.equals("teacher")) {
+                    user = new Teacher();
+                } else if (type.equals("student")) {
+                    user = new Student();
+                }
                 user.setId(userSet.getInt(1));
                 user.setName(userSet.getString(2));
                 user.setPassword(userSet.getString(3));

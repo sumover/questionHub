@@ -9,9 +9,13 @@
 <html>
 <head>
     <title>用户登录</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/loginCSS.css">
 </head>
 <body>
+<%
+    //  TODO 根据session.getAttribute("loginFail")的值来判断是否添加登录错误信息
+%>
 <div class="loginFormDiv">
     <form method="post" action="loginDispatcher">
         <fieldset>
