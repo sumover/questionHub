@@ -20,10 +20,10 @@ public class LoginSuccessDispatcher extends HttpServlet {
         session.setAttribute("userType", loginUser.getUserType());
         if (loginUser.getUserType().equals("teacher")) {
             // TODO 转到teacher界面
-            response.sendRedirect("studentHomePage.jsp");
+            response.sendRedirect("teacherHomePage.jsp");
         } else if (loginUser.getUserType().equals("student")) {
             // TODO 转到student界面
-            response.sendRedirect("teacherHomePage.jsp");
+            response.sendRedirect("studentHomePage.jsp");
         }
 //        super.doGet(req, resp);
     }

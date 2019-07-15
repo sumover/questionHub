@@ -28,6 +28,7 @@ public class UserLoginChecker {
                 } else if (type.equals("student")) {
                     user = new Student();
                 }
+                assert user != null;
                 user.setId(userSet.getInt(1));
                 user.setName(userSet.getString(2));
                 user.setPassword(userSet.getString(3));
