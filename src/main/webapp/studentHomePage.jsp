@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td>
-            <a href="">参与考试</a>
+            <a href="/examinationList">参与考试</a>
         </td>
     </tr>
 </table>

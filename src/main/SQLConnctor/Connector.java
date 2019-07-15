@@ -4,6 +4,11 @@ package main.SQLConnctor;
 import java.sql.*;
 import java.util.*;
 
+/**
+ * 核心数据库查询组件
+ * Licensed to GPL
+ * 请手动设置数据库IPV4地址, 端口, 数据库名, 密码, 用户名的属性
+ */
 public class Connector {
     private final static String url;
     private final static String IPV4;
@@ -14,6 +19,8 @@ public class Connector {
     private static Connector _connector = new Connector();
     private static boolean connected = false;
 
+
+    // 初始化
     static {
         IPV4 = "localhost";
         username = "root";
@@ -27,6 +34,12 @@ public class Connector {
         return databaseName;
     }
 
+    /**
+     * 原子操作,要求必须线程安全
+     * 不过就是查个boolean的值, 应该很快
+     *
+     * @return connected or not
+     */
     public synchronized static boolean isConnected() {
         return connected;
     }
@@ -37,15 +50,21 @@ public class Connector {
     private Connector() {
     }
 
+    /**
+     * 静态全局变量 _connector 的一个连接方法, 要求在每个Servlet类加载时判断是否加载并调用该方法
+     */
     public synchronized static void connect_static() {
         _connector.connect();
     }
 
+    /**
+     * 同上
+     */
     public synchronized static void disconnect_static() {
         _connector.disConnect();
     }
 
-    public void connect() {
+    private void connect() {
         connected = true;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -61,7 +80,7 @@ public class Connector {
         System.out.println("database connect success!");
     }
 
-    public void disConnect() {
+    private void disConnect() {
         connected = false;
         try {
             statement.close();

@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Examination {
+    private int id;
     private ExaminationPaper examinationPaper;
     private Teacher createTeacher;
     private Date createTime, beginTime, endTime;
@@ -14,6 +15,15 @@ public class Examination {
 
     public Examination() {
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public ExaminationPaper getExaminationPaper() {
         return examinationPaper;
@@ -35,7 +45,7 @@ public class Examination {
         return createTime;
     }
 
-    public void setCreateTime(Time createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -43,7 +53,7 @@ public class Examination {
         return beginTime;
     }
 
-    public void setBeginTime(Time beginTime) {
+    public void setBeginTime(Date beginTime) {
         this.beginTime = beginTime;
     }
 
@@ -51,7 +61,7 @@ public class Examination {
         return endTime;
     }
 
-    public void setEndTime(Time endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
@@ -59,7 +69,7 @@ public class Examination {
         return status;
     }
 
-    void setStatus(String status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -78,4 +88,5 @@ public class Examination {
     public static String parseFromDate(Date date) {
         return simpleDateFormat.format(date);
     }
+
 }

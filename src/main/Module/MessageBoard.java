@@ -1,6 +1,7 @@
 package main.Module;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class MessageBoard {
     private int messageNum;
