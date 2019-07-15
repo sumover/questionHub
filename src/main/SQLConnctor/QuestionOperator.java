@@ -4,6 +4,7 @@ import main.Module.Question;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * 模板模式, 其中, insertIntoTypeTable下放到子类中, 在题目插入相关表前,
@@ -82,4 +83,6 @@ public abstract class QuestionOperator {
             e.printStackTrace();
         }
     }
+
+    public abstract Question getQuestionInSQL(int id);
 }

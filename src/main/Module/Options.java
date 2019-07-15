@@ -1,6 +1,6 @@
 package main.Module;
 
-class Options {
+public class Options {
     public char c;
     public String describe;
 

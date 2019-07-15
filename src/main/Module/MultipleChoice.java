@@ -1,6 +1,9 @@
 package main.Module;
 
-import javax.json.*;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonValue;
 import java.io.StringReader;
 import java.util.*;
 
@@ -10,11 +13,22 @@ public class MultipleChoice extends Question {
     List<Options> options;
 
     public MultipleChoice(int score, String describe, List<Options> options) {
-        super(score, "MultipleChoice ");
-        options = new LinkedList<Options>();
+        super(score, "multipleChoice");
+        this.describe = describe;
+        this.options = new LinkedList<Options>(options);
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public void setOptions(List<Options> options) {
+        this.options = options;
     }
 
     public MultipleChoice() {
+        super();
+        super.setType("multipleChoice");
     }
 
     public void addOptions(char c, String describes) {
@@ -30,10 +44,14 @@ public class MultipleChoice extends Question {
     }
 
     public static String getOptionsJsonByList(List<Options> optionList) {
+        Iterator<Options> iterator = optionList.iterator();
         String json = "{\n";
-        for (Options option :
-                optionList) {
+        Options options = iterator.next();
+        json += "\"" + options.c + "\" : \"" + options.describe + "\"";
 
+        while (iterator.hasNext()) {
+            options = iterator.next();
+            json += ",\n\"" + options.c + "\" : \"" + options.describe + "\",\n";
         }
         return json + "\n}";
     }
