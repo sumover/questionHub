@@ -39,6 +39,7 @@ public class LoginDispatcher extends HttpServlet {
         } else {
             response.getWriter().println("login success!");
             session.setAttribute("loginUser", user);
+            response.sendRedirect("loginSuccess");
         }
     }
 }
