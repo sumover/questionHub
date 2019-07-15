@@ -4,19 +4,19 @@ import java.util.Date;
 import java.util.List;
 
 public class ExaminaionPaper {
-    private List<Question> questionList;
     private int id;
     private String name;
     private Date createDate;
     private Teacher createTeacher;
-    private static int EXAMINAIONPAPER_NUM = 0;
+    private List<Question> questionList;
+    private String note;
+
 
     public ExaminaionPaper(List<Question> questionList, String name, Date createDate, Teacher createTeacher) {
         this.questionList = questionList;
         this.name = name;
         this.createDate = createDate;
         this.createTeacher = createTeacher;
-        this.id = EXAMINAIONPAPER_NUM++;
     }
 
     public ExaminaionPaper() {
@@ -63,4 +63,11 @@ public class ExaminaionPaper {
     }
 
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }
