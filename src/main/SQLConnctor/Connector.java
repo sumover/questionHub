@@ -5,11 +5,27 @@ import java.sql.*;
 import java.util.*;
 
 public class Connector {
-    private final static String url = "jdbc:mysql://localhost:3306/web_note_databases?serverTimezone=UTC";
-    private final static String password = "2323180";
-    private final static String username = "root";
+    private final static String url;
+    private final static String IPV4;
+    private final static String databaseName;
+    private final static String port;
+    private final static String password;
+    private final static String username;
     private static Connector _connector = new Connector();
     private static boolean connected = false;
+
+    static {
+        IPV4 = "localhost";
+        username = "root";
+        password = "2323180";
+        databaseName = "web_note_databases";
+        port = "3306";
+        url = "jdbc:mysql://" + IPV4 + ":" + port + "/" + databaseName + "?serverTimezone=UTC";
+    }
+
+    public static String getDatabaseName() {
+        return databaseName;
+    }
 
     public synchronized static boolean isConnected() {
         return connected;
