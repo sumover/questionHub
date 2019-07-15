@@ -15,11 +15,23 @@ public class UserLoginChecker {
     }
 
     public User loginCheck(String name, String password) {
-        User user = null;
         ResultSet userSet = connector.selectValues(
                 "select * from user_data where name=? and password=?;",
                 new String[]{name, password}
         );
+        return getUser(userSet);
+    }
+
+    User getUser(int uid) {
+        ResultSet userSet = connector.selectValues(
+                "select * from user_data where id=?;",
+                new String[]{Integer.toString(uid)}
+        );
+        return getUser(userSet);
+    }
+
+    private static User getUser(ResultSet userSet) {
+        User user = null;
         try {
             if (userSet.next()) {
                 String type = userSet.getString(5);

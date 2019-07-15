@@ -47,6 +47,7 @@ public class MultipleChoiseQuestionOpertor extends QuestionOperator {
             multipleChoice.setOptions(
                     MultipleChoice.getOptionsListByJSON(mutipleChoiseResult.getString(3))
             );
+            mutipleChoiseResult.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

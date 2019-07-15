@@ -1,12 +1,10 @@
 package main.Module;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ExaminaionPaper {
+public class ExaminationPaper {
     private int id;
     private String name;
     private Date createDate;
@@ -15,14 +13,14 @@ public class ExaminaionPaper {
     private String note;
 
 
-    public ExaminaionPaper(List<Question> questionList, String name, Date createDate, Teacher createTeacher) {
+    public ExaminationPaper(List<Question> questionList, String name, Date createDate, Teacher createTeacher) {
         this.questionList = questionList;
         this.name = name;
         this.createDate = createDate;
         this.createTeacher = createTeacher;
     }
 
-    public ExaminaionPaper() {
+    public ExaminationPaper() {
     }
 
     public List<Question> getQuestionList() {

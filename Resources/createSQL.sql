@@ -23,7 +23,7 @@ create table questions
 );
 
 -- 选择题表创建
-create table multiple_choise_questions
+create table multiple_choice_questions
 (
   id         int auto_increment
     primary key,

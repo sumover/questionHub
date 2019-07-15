@@ -1,10 +1,9 @@
 package main;
 
-import main.Module.ExaminaionPaper;
+import main.Module.ExaminationPaper;
 import main.Module.Question;
 import main.SQLConnctor.Connector;
 import main.SQLConnctor.MultipleChoiseQuestionOpertor;
-import main.SQLConnctor.QuestionOperator;
 
 import java.util.Arrays;
 
@@ -16,7 +15,7 @@ public class TestSQLMain {
         for (int i = 0; i < 4; ++i) {
             questions[i] = questionOpertor.getQuestionInSQL(i + 1);
         }
-        System.out.println(ExaminaionPaper.parseQuestionListToIdList(Arrays.asList(questions)));
+        System.out.println(ExaminationPaper.parseQuestionListToIdList(Arrays.asList(questions)));
         Connector.disconnect_static();
     }
 }
