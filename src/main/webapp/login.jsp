@@ -22,7 +22,7 @@ Time : 12:45
                         考试信息
                     </td>
                     <td>
-                        <a href="">more>>></a>
+                        <a href="examinationList">more>>></a>
                     </td>
                 </tr>
                 <%
