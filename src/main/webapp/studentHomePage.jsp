@@ -15,7 +15,7 @@
 <table>
     <tr>
         <td>
-            <a href="">自主练习</a>
+            <a href="questionList">自主练习</a>
         </td>
     </tr>
     <tr>

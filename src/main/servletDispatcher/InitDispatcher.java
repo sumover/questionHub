@@ -31,6 +31,7 @@ public class InitDispatcher extends HttpServlet {
         if (session.getAttribute("loginFail") == null) session.setAttribute("loginFail", false);
         // todo 添加公告信息
         MessageBoard messageBoard = new MessageBoard();
+        messageBoard.setMessageNum(0);
         session.setAttribute("loginPageMessageBoard", messageBoard);
         request.setCharacterEncoding("UTF-8");
         response.sendRedirect("login.jsp");
