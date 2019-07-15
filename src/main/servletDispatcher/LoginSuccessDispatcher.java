@@ -1,7 +1,6 @@
 package main.servletDispatcher;
 
 import main.Module.User;
-import org.apache.ibatis.annotations.Param;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
