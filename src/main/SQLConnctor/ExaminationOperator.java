@@ -17,7 +17,13 @@ public class ExaminationOperator {
      */
     public MessageBoard getLoginPageMessage() {
         MessageBoard messageBoard = new MessageBoard();
-        connector.selectValues("", new String[]{});
+        connector.selectValues(
+                "select * from examination\n" +
+                        "where end_time > current_time ;\n",
+                null
+        );
+
         return messageBoard;
     }
+
 }
