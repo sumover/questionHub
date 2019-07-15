@@ -34,20 +34,21 @@ public class Connector {
         return databaseName;
     }
 
+    private Connection connection;
+
+    private Statement statement;
+
+    private Connector() {
+    }
+
     /**
-     * 原子操作,要求必须线程安全
+     * 原子操作, 要求必须线程安全
      * 不过就是查个boolean的值, 应该很快
      *
      * @return connected or not
      */
     public synchronized static boolean isConnected() {
         return connected;
-    }
-
-    private Connection connection;
-    private Statement statement;
-
-    private Connector() {
     }
 
     /**
