@@ -3,7 +3,6 @@ package main.servletDispatcher;
 import main.Module.Examination;
 import main.SQLConnctor.Connector;
 import main.SQLConnctor.ExaminationOperator;
-import sun.plugin.com.Dispatcher;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,7 +27,7 @@ public class ExaminationListPageDispatcher extends HttpServlet {
         ExaminationOperator examinationOperator = new ExaminationOperator();
         List<Examination> list = examinationOperator.getExaminationList();
         session.setAttribute("examinationList", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("examinationListPage");
         dispatcher.forward(request, response);
 
     }
