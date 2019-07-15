@@ -1,6 +1,7 @@
 package main;
 
 import main.Module.ExaminationPaper;
+import main.Module.StudentAnswer;
 import main.SQLConnctor.Connector;
 import main.SQLConnctor.ExaminationPaperOperator;
 
@@ -8,18 +9,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 public class TestSQLMain {
     public static void main(String[] args) {
 //        Connector.connect_static();
 //        Connector.disconnect_static();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        try {
-            Date date = formatter.parse("2019-05-11 11:22:33");
-            System.out.println(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
+        String parse = "(A),(B),(C)";
+//        System.out.println(parse);
+//        System.out.println(parse.substring(1, 2));
+        List<String> stringList = StudentAnswer.parseAnswerListFromString(parse);
+        for (String o : stringList) {
+            System.out.println(o);
         }
-
+        System.out.println(StudentAnswer.formatAnswerList(stringList));
     }
 }
