@@ -32,12 +32,13 @@ public class LoginDispatcher extends HttpServlet {
 //        response.getWriter().println("name : " + name + "\npwd : " + password);
         UserLoginChecker loginChecker = new UserLoginChecker();
         User user = loginChecker.loginCheck(name, password);
+        HttpSession session = request.getSession();
         if (user == null) {
-            HttpSession session = request.getSession();
             session.setAttribute("loginFail", true);
             response.sendRedirect("login");
         } else {
             response.getWriter().println("login success!");
+            session.setAttribute("loginUser", user);
         }
     }
 }

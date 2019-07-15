@@ -1,8 +1,9 @@
-body{
+@charset "utf-8";
+body {
     background-color: rgb(239, 244, 247);
 }
 
-form{
+form {
     height: 130px;
     width: 340px;
     border-radius: 1em;
@@ -10,13 +11,13 @@ form{
     align-items: center;
 }
 
-fieldset{
+fieldset {
     background-color: white;
     border-radius: inherit;
     padding-right: 0;
 }
 
-.loginFormDiv{
+.loginFormDiv {
     margin: auto;
     position: absolute;
     top: 0;
@@ -27,22 +28,22 @@ fieldset{
     height: 165px;
 }
 
-.loginTable{
+.loginTable {
     text-align: right;
     border-spacing: 15px;
 }
 
-#tdLoginSubmitButton{
+#tdLoginSubmitButton {
     text-align: center;
 }
 
-#loginFormUserNameText #loginFormPasswordText{
+#loginFormUserNameText #loginFormPasswordText {
     color: lightskyblue;
     border-radius: inherit;
     width: 360px;
 }
 
-#loginFormSubmitButton{
+#loginFormSubmitButton {
     height: 36px;
     weight: 125px;
     color: white;
@@ -50,6 +51,6 @@ fieldset{
     border: 0;
 }
 
-input:invalid{
+input:invalid {
     box-shadow: 0 0 5px 1px red;
 }

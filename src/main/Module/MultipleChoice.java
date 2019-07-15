@@ -10,7 +10,7 @@ import java.util.*;
 
 public class MultipleChoice extends Question {
     private String describe;
-    List<Options> options;
+    private List<Options> options;
 
     public MultipleChoice(int score, String describe, List<Options> options) {
         super(score, "multipleChoice");
