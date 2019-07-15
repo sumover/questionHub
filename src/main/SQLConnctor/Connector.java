@@ -138,15 +138,16 @@ public class Connector {
     }
 
     /**
-     * 用来获取某个table的所有的id列表
+     * 用来获取某个table的所有的id列表, 具有可扩展的条件参数,没有扩展的参数时请设为null
      *
-     * @param table 表名
+     * @param table      表名
+     * @param conditions 条件 请默认设为null
      * @return
      */
-    public Integer[] getIdArrays(String table) {
+    public Integer[] getIdArrays(String table, String conditions) {
         List<Integer> list = new LinkedList<Integer>();
         try {
-            String sql = "select id from " + table + " ;";
+            String sql = "select id from " + table + conditions == null ? " ;" : conditions + " ;";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet set = statement.executeQuery();
             while (set.next()) list.add(set.getInt(1));

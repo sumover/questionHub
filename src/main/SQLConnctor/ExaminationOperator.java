@@ -13,7 +13,7 @@ import java.util.List;
 public class ExaminationOperator {
     private Connector connector;
 
-    ExaminationOperator() {
+    public ExaminationOperator() {
         this.connector = Connector.getInstance();
     }
 
@@ -88,6 +88,20 @@ public class ExaminationOperator {
 //            e.printStackTrace();
 //        }
         return examination;
+    }
+
+    /**
+     * 给examinationList准备的
+     *
+     * @return 考试列表
+     */
+    public List<Examination> getExaminationList() {
+        List<Examination> examinations = new LinkedList<Examination>();
+        Integer[] eidArray = connector.getIdArrays("eid", "where end_time > current_time order by begin_time");
+        for (Integer eid : eidArray) {
+            examinations.add(getExaminationById(eid));
+        }
+        return examinations;
     }
 
     private boolean getExaminationFromResult(ResultSet resultSet, Examination examination) {
