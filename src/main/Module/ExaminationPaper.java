@@ -86,6 +86,7 @@ public class ExaminationPaper {
                 id = id * 10 + c - '0';
             } else {
                 list.add(id);
+                id = 0;
             }
         }
         list.add(id);
