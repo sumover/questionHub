@@ -2,6 +2,7 @@ package main.servletDispatcher;
 
 import main.Module.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,13 +18,8 @@ public class LoginSuccessDispatcher extends HttpServlet {
         HttpSession session = request.getSession();
         User loginUser = (User) session.getAttribute("loginUser");
         session.setAttribute("userType", loginUser.getUserType());
-        if (loginUser.getUserType().equals("teacher")) {
-            // TODO 转到teacher界面
-            response.sendRedirect("teacherHomePage.jsp");
-        } else if (loginUser.getUserType().equals("student")) {
-            // TODO 转到student界面
-            response.sendRedirect("studentHomePage.jsp");
-        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher(loginUser.getUserType() + "HomePage.jsp");
+        dispatcher.forward(request, response);
 //        super.doGet(req, resp);
     }
 
