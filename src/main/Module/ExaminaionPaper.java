@@ -97,6 +97,12 @@ public class ExaminaionPaper {
         return arr;
     }
 
+    /**
+     * 把questionList编码为可存放在数据库内且可解析的字符串
+     *
+     * @param questionList 被编码的list
+     * @return 编好的字符串
+     */
     public static String parseQuestionListToIdList(List<Question> questionList) {
         String parse = Integer.toString(questionList.get(0).getId());
         for (int i = 1; i < questionList.size(); ++i)

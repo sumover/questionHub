@@ -1,26 +1,22 @@
 package main;
 
-import main.Module.*;
+import main.Module.ExaminaionPaper;
+import main.Module.Question;
 import main.SQLConnctor.Connector;
 import main.SQLConnctor.MultipleChoiseQuestionOpertor;
+import main.SQLConnctor.QuestionOperator;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 public class TestSQLMain {
     public static void main(String[] args) {
         Connector.connect_static();
-
         MultipleChoiseQuestionOpertor questionOpertor = new MultipleChoiseQuestionOpertor();
-        MultipleChoice multipleChoice = new MultipleChoice(
-                5, "are you shadiao?",
-                new LinkedList<Options>(Arrays.asList(new Options('A', "YES"),
-                        new Options('B', "NO")))
-        );
-//        questionOpertor.insertIntoQuestions(multipleChoice);
-        multipleChoice.setId(12);
-        questionOpertor.deleteQuestion(multipleChoice);
+        Question[] questions = new Question[4];
+        for (int i = 0; i < 4; ++i) {
+            questions[i] = questionOpertor.getQuestionInSQL(i + 1);
+        }
+        System.out.println(ExaminaionPaper.parseQuestionListToIdList(Arrays.asList(questions)));
         Connector.disconnect_static();
     }
 }
