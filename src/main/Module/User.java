@@ -2,30 +2,27 @@ package main.Module;
 
 import java.util.Date;
 
-enum USER_TYPE {
-    teacher, student
-}
 
 public abstract class User {
     private int id;
     private Date registerDate;
     private String name;
     private String password;
-    private USER_TYPE userType;
+    private String userType;
     private static int USER_NUM = 0;
 
-    public User(Date registerDate, String name, String password, USER_TYPE type) {
+    public User(Date registerDate, String name, String password, String type) {
         this.registerDate = registerDate;
         this.name = name;
         this.password = password;
         this.userType = type;
     }
 
-    public USER_TYPE getUserType() {
+    public String  getUserType() {
         return userType;
     }
 
-    public void setUserType(USER_TYPE userType) {
+    public void setUserType(String userType) {
         this.userType = userType;
     }
 
