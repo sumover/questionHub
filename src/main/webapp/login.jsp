@@ -17,6 +17,14 @@ Time : 12:45
     <div class="messageBoardDiv">
         <fieldset>
             <table class="messageBoardTable">
+                <tr>
+                    <td>
+                        考试信息
+                    </td>
+                    <td>
+                        <a href="">more>>></a>
+                    </td>
+                </tr>
                 <%
                     MessageBoard messageBoard = (MessageBoard) session.getAttribute("loginPageMessageBoard");
                     int length = messageBoard.getMessageNum();
