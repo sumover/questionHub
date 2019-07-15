@@ -1,7 +1,5 @@
 package main.Module;
 
-import main.SQLConnctor.AnswerOperator;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,6 +8,9 @@ public class StudentAnswer {
     private Student student;
     private Examination examination;
     private List<String> answerList;
+
+    public StudentAnswer() {
+    }
 
     public Student getStudent() {
         return student;

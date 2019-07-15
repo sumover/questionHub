@@ -11,6 +11,11 @@ public abstract class User {
     private String userType;
     private static int USER_NUM = 0;
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public User(Date registerDate, String name, String password, String type) {
         this.registerDate = registerDate;
         this.name = name;
@@ -18,7 +23,7 @@ public abstract class User {
         this.userType = type;
     }
 
-    public String  getUserType() {
+    public String getUserType() {
         return userType;
     }
 
