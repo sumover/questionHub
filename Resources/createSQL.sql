@@ -43,4 +43,18 @@ create table examination_paper
   question_list text         not null comment '题目id表,字符串类型,两个id之间用空格分开'
 )
   comment '试卷';
+--
+create table examination
+(
+  id                   int auto_increment
+    primary key,
+  examination_paper_id int         not null comment '考试用到的试卷的id',
+  create_teacher_id    int         not null comment '创建该场考试的老师的id',
+  create_time          datetime    not null comment '创建考试的时间',
+  begin_time           datetime    not null comment '考试开始时间',
+  end_time             datetime    not null comment '考试结束时间',
+  status               varchar(20) not null comment '考试状态 public或private'
+)
+  comment '考试信息';
+
 
