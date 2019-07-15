@@ -23,13 +23,13 @@ public class ExaminationListPageDispatcher extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println(23333);
-//        HttpSession session = request.getSession();
-//        ExaminationOperator examinationOperator = new ExaminationOperator();
-//        List<Examination> list = examinationOperator.getExaminationList();
-//        session.setAttribute("examinationList", list);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("examinationListPage");
-//        dispatcher.forward(request, response);
+//        response.getWriter().println(23333);
+        HttpSession session = request.getSession();
+        ExaminationOperator examinationOperator = new ExaminationOperator();
+        List<Examination> list = examinationOperator.getExaminationList();
+        session.setAttribute("examinationList", list);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("examinationListPage.jsp");
+        dispatcher.forward(request, response);
 
     }
 

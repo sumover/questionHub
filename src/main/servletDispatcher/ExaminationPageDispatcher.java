@@ -23,11 +23,15 @@ public class ExaminationPageDispatcher extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         RequestDispatcher dispatcher = request.getRequestDispatcher("");
+        if (session.getAttribute("loginFail") == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
         Integer eid = Integer.getInteger(request.getParameter("eid"));
         ExaminationOperator examinationOperator = new ExaminationOperator();
         Examination examination = examinationOperator.getExaminationById(eid);
-        HttpSession session = request.getSession();
         session.setAttribute("drewExamination", examination);
         dispatcher.forward(request, response);
     }
