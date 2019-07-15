@@ -27,8 +27,8 @@ public class ExaminationPaperOperator {
     public ExaminationPaper getExaminationPaper(int pid) {
         ExaminationPaper examinationPaper = new ExaminationPaper();
         UserLoginChecker userLoginChecker = new UserLoginChecker();
-        MultipleChoiseQuestionOpertor multipleChoiseQuestionOpertor =
-                new MultipleChoiseQuestionOpertor();
+        MultipleChoiceQuestionOpertor multipleChoiseQuestionOpertor =
+                new MultipleChoiceQuestionOpertor();
         ResultSet resultSet = connector.selectValues(
                 "select * from web_note_databases.examination_paper\n" +
                         "where id=?;",
