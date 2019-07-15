@@ -5,7 +5,7 @@
   Time: 10:50
   To change this template use File | Settings | File Templates.
 --%>
-<%@page isELIgnored="false"%>
+<%@page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,12 +15,12 @@
 <table>
     <tr>
         <td>
-            <a href="">练习</a>
+            <a href="">自主练习</a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="">考试</a>
+            <a href="">参与考试</a>
         </td>
     </tr>
 </table>
