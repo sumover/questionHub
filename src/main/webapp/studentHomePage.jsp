@@ -1,16 +1,28 @@
 <%--
   Created by IntelliJ IDEA.
-  author:yuanyuan
+  User: dell
   Date: 2019/7/15
-  Time: 11:43
+  Time: 10:50
   To change this template use File | Settings | File Templates.
 --%>
+<%@page isELIgnored="false"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>studentHomePage</title>
+    <title>欢迎,${sessionScope.loginUser}</title>
 </head>
 <body>
-student home page~
+<table>
+    <tr>
+        <td>
+            <a href="">练习</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="">考试</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
