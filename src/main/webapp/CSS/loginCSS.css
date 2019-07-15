@@ -1,8 +1,8 @@
-body {
-    background-color: #eff4f7;
+body{
+    background-color: rgb(239, 244, 247);
 }
 
-form {
+form{
     height: 130px;
     width: 340px;
     border-radius: 1em;
@@ -10,42 +10,46 @@ form {
     align-items: center;
 }
 
-fieldset {
-    border: 1px solid #CCCCCC;
+fieldset{
     background-color: white;
     border-radius: inherit;
     padding-right: 0;
-    box-shadow: 1px 1px 1px 1px rgb(239, 244, 247);
 }
 
-div {
-    margin: 0 auto;
-    width: 100%;
-    left: 885px;
-    top: 218px;
-    right: 332px;
-    buttom: 289px;
+.loginFormDiv{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 335px;
+    height: 165px;
 }
 
-table {
+.loginTable{
     text-align: right;
     border-spacing: 15px;
 }
 
-#tdLoginSubmitButton {
+#tdLoginSubmitButton{
     text-align: center;
 }
 
-#loginFormUserNameText #loginFormPasswordText {
+#loginFormUserNameText #loginFormPasswordText{
     color: lightskyblue;
     border-radius: inherit;
     width: 360px;
 }
 
-#loginFormSubmitButton {
+#loginFormSubmitButton{
     height: 36px;
     weight: 125px;
     color: white;
     background-color: dodgerblue;
     border: 0;
+}
+
+input:invalid{
+    box-shadow: 0 0 5px 1px red;
 }
