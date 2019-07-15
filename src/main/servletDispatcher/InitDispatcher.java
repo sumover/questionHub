@@ -76,8 +76,10 @@ public class InitDispatcher extends HttpServlet {
         MessageBoard messageBoard = new MessageBoard();
         session.setAttribute("loginPageMessageBoard", messageBoard);
         request.setCharacterEncoding("UTF-8");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect("login.jsp");
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//        dispatcher.forward(request, response);
+
     }
 
     @Override
