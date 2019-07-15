@@ -13,7 +13,7 @@ public abstract class QuestionOperator {
     Connector connector;
     private boolean autoSetId = true;
 
-    public QuestionOperator() {
+    QuestionOperator() {
         connector = Connector.getInstance();
     }
 
@@ -57,7 +57,7 @@ public abstract class QuestionOperator {
     /**
      * @param id 要被删除的类型的题的id
      */
-    public abstract void deleteTypeQuestion(int id);
+    abstract void deleteTypeQuestion(int id);
 
     public void deleteQuestion(Question question) {
         int qid = question.getId();

@@ -1,5 +1,8 @@
 package main.Module;
 
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,6 +14,7 @@ class Options {
         this.c = c;
         this.describe = describe;
     }
+
 }
 
 public class MultipleChoice extends Question {
@@ -35,5 +39,20 @@ public class MultipleChoice extends Question {
 
     public String getDescribe() {
         return describe;
+    }
+
+    public static String getOptionsJsonByList(List<Options> optionList) {
+        String json = "{\n";
+        for (Options option :
+                optionList) {
+
+        }
+        return json + "\n}";
+    }
+
+    public static List<Options> getOptionsListByJSON(String json) {
+        List<Options> optionsList = new LinkedList<Options>();
+
+        return optionsList;
     }
 }
