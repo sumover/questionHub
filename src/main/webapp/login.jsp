@@ -1,15 +1,14 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: yuanyuan
-  Date: 2019/7/14
-  Time: 12:45
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA
+User : yuanyuan
+Date : 2019/7.14
+Time : 12:45
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>用户登录</title>
     <meta charset="UTF-8">
+    <title>用户登录</title>
     <link rel="stylesheet" href="CSS/loginCSS.css">
 </head>
 <body>
@@ -20,7 +19,9 @@
                 <table class="loginTable">
                     <tr>
                         <td>
-                            <label for="loginFormUserNameText">用户名:</label>
+                            <label for="loginFormUserNameText">
+                                用户名:
+                            </label>
                         </td>
                         <td>
                             <input type="text" id="loginFormUserNameText" name="loginFormUserNameText" required>
@@ -28,18 +29,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="loginFormPasswordText">密码:</label>
+                            <label for="loginFormPasswordText">
+                                密码:
+                            </label>
                         </td>
                         <td>
-                            <input type="password" id="loginFormPasswordText" name="loginFormPasswordText"
-                                   required>
+                            <input type="password" id="loginFormPasswordText" name="loginFormPasswordText" required>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td id="tdLoginSubmitButton">
                             <input type="submit" id="loginFormSubmitButton" name="loginFormSubmitButton"
-                                   value="     登    录     ">
+                                   value="    登    录    ">
                         </td>
                     </tr>
                 </table>
@@ -47,6 +49,6 @@
         </form>
     </div>
 </div>
-<script type="text/javascript" src="JavaScript/loginJS.js"></script>
+<script type="text/javascript" src="JavaScript/loginJS.js" charset="UTF-8"/>
 </body>
 </html>

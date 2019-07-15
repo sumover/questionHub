@@ -75,6 +75,7 @@ public class InitDispatcher extends HttpServlet {
         // todo 添加公告信息
         MessageBoard messageBoard = new MessageBoard();
         session.setAttribute("loginPageMessageBoard", messageBoard);
+        request.setCharacterEncoding("UTF-8");
         RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
         dispatcher.forward(request, response);
     }
