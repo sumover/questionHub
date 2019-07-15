@@ -9,6 +9,7 @@ public class TestSQLMain {
         Connector.connect_static();
         ExaminationPaperOperator operator = new ExaminationPaperOperator();
         ExaminationPaper examinationPaper = operator.getExaminationPaper(1);
+        operator.addExaminationPaper(examinationPaper);
         Connector.disconnect_static();
     }
 }

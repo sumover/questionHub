@@ -20,18 +20,18 @@ public class ExaminationPaperOperator {
         ExaminationPaperOperator.autoSetId = b;
     }
 
-    public int addExaminationPaper(ExaminationPaper examinaionPaper) {
+    public int addExaminationPaper(ExaminationPaper examinationPaper) {
         int eid = connector.insertValues(
                 "insert into examination_paper (name, create_date, create_teacher_id, question_list, note)\n" +
                         "values (?,CURRENT_DATE,?,?,?);",
                 new String[]{ //name, create_teacher_id, question_list, note
-                        examinaionPaper.getName(),
-                        Integer.toString(examinaionPaper.getCreateTeacher().getId()),
-                        ExaminationPaper.parseQuestionListToIdList(examinaionPaper.getQuestionList()),
-                        examinaionPaper.getNote()
+                        examinationPaper.getName(),
+                        Integer.toString(examinationPaper.getCreateTeacher().getId()),
+                        ExaminationPaper.parseQuestionListToIdList(examinationPaper.getQuestionList()),
+                        examinationPaper.getNote()
                 }
         );
-        if (autoSetId) examinaionPaper.setId(eid);
+        if (autoSetId) examinationPaper.setId(eid);
         return autoSetId ? 0 : eid;
     }
 
