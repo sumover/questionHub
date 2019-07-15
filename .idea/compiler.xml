@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="questionHub" target="1.7" />
+      <module name="questionHub" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,12 +1,15 @@
 package main.Module;
 
 import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Examination {
     private ExaminationPaper examinationPaper;
     private Teacher createTeacher;
-    private Time createTime, beginTime, endTime;
+    private Date createTime, beginTime, endTime;
     private String status; // public, private
 
     public Examination() {
@@ -28,7 +31,7 @@ public class Examination {
         this.createTeacher = createTeacher;
     }
 
-    public Time getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
@@ -36,7 +39,7 @@ public class Examination {
         this.createTime = createTime;
     }
 
-    public Time getBeginTime() {
+    public Date getBeginTime() {
         return beginTime;
     }
 
@@ -44,7 +47,7 @@ public class Examination {
         this.beginTime = beginTime;
     }
 
-    public Time getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
@@ -58,5 +61,21 @@ public class Examination {
 
     void setStatus(String status) {
         this.status = status;
+    }
+
+
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+    public static Date parseFromSQL(String dateFromSQL) {
+        try {
+            return simpleDateFormat.parse(dateFromSQL);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String parseFromDate(Date date) {
+        return simpleDateFormat.format(date);
     }
 }
