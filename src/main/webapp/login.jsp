@@ -1,9 +1,10 @@
-<%--
+<%@ page import="main.Module.MessageBoard" %><%--
 Created by IntelliJ IDEA
 User : yuanyuan
 Date : 2019/7.14
 Time : 12:45
 --%>
+<%@page isELIgnored="false" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
@@ -13,6 +14,30 @@ Time : 12:45
 </head>
 <body>
 <div>
+    <div class="messageBoardDiv">
+        <fieldset>
+            <table class="messageBoardTable">
+                <%
+                    MessageBoard messageBoard = (MessageBoard) session.getAttribute("loginPageMessageBoard");
+                    int length = messageBoard.getMessageNum();
+                    for (int i = 0; i < length; ++i) {
+                        String message = messageBoard.getMessageTextAt(i);
+                        String url = messageBoard.getMessageUrlAt(i);
+                %>
+                <tr>
+                    <td>
+                        <a href="${url}">${message}</a>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+            </table>
+        </fieldset>
+    </div>
     <div class="loginFormDiv">
         <form action="loginDispatcher" method="post">
             <fieldset>
