@@ -18,12 +18,18 @@
 <table>
     <tr>
         <td>
-            <a href="">考试布置</a>
+            <a href="">考试管理</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="">试卷管理</a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="">习题布置</a>
+            <a href="">题目管理</a>
         </td>
     </tr>
     <tr>
