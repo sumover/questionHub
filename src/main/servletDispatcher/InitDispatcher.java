@@ -37,7 +37,6 @@ public class InitDispatcher extends HttpServlet {
         response.sendRedirect("login.jsp");
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 //        dispatcher.forward(request, response);
-
     }
 
     @Override
