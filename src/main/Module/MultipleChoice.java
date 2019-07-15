@@ -1,21 +1,9 @@
 package main.Module;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import java.util.LinkedList;
-import java.util.List;
+import javax.json.*;
+import java.io.StringReader;
+import java.util.*;
 
-class Options {
-    public char c;
-    public String describe;
-
-    public Options(char c, String describe) {
-        this.c = c;
-        this.describe = describe;
-    }
-
-}
 
 public class MultipleChoice extends Question {
     private String describe;
@@ -50,9 +38,17 @@ public class MultipleChoice extends Question {
         return json + "\n}";
     }
 
-    public static List<Options> getOptionsListByJSON(String json) {
+    public static List<Options> getOptionsListByJSON(String jsonString) {
         List<Options> optionsList = new LinkedList<Options>();
-
+        JsonReader reader = Json.createReader(new StringReader(jsonString));
+        JsonObject jsonObject = reader.readObject();
+        Set<Map.Entry<String, JsonValue>> entries = jsonObject.entrySet();
+        Iterator<Map.Entry<String, JsonValue>> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, JsonValue> entry =
+                    iterator.next();
+            optionsList.add(new Options(entry.getKey().charAt(0), entry.getValue().toString()));
+        }
         return optionsList;
     }
 }

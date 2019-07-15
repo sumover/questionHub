@@ -1,20 +1,22 @@
 package main.SQLConnctor;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonReader;
-import javax.json.stream.JsonParser;
-import java.io.StringReader;
+import main.Module.*;
+
+import java.util.List;
 
 public class TestSQLMain {
     public static void main(String[] args) {
         String jsonString = "{\n" +
-                "            \"A\":0, \n" +
-                "            \"B\":1\n" +
+                "            \"A\":0,\n" +
+                "            \"B\":1,\n" +
+                "            \"C\":2,\n" +
+                "            \"D\":3\n" +
                 "        }";
-        JsonReader jsonReader = Json.createReader(new StringReader(jsonString));
-        JsonArray array = jsonReader.readArray();
-        System.out.println(array);
-        jsonReader.close();
+
+        List<Options> list = MultipleChoice.getOptionsListByJSON(jsonString);
+        for (int i = 0; i < list.size(); ++i) {
+            Object o = list.get(i);
+
+        }
     }
 }
