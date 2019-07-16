@@ -15,7 +15,7 @@
 </head>
 <body>
 <%
-    Examination examination = (Examination) session.getAttribute("examnation");
+    Examination examination = (Examination) session.getAttribute("drewExamination");
     ExaminationPaper examinationPaper = examination.getExaminationPaper();
     String name = examinationPaper.getName();
 %>

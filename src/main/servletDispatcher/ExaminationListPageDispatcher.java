@@ -30,7 +30,6 @@ public class ExaminationListPageDispatcher extends HttpServlet {
         session.setAttribute("examinationList", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("examinationListPage.jsp");
         dispatcher.forward(request, response);
-
     }
 
     @Override
