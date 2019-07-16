@@ -19,7 +19,7 @@ Time : 12:45
             <table class="messageBoardTable">
                 <tr>
                     <td>
-                        考试信息
+                        考试信息公告
                     </td>
                     <td>
                         <a href="examinationList">more>>></a>
@@ -27,6 +27,10 @@ Time : 12:45
                 </tr>
                 <%
                     MessageBoard messageBoard = (MessageBoard) session.getAttribute("loginPageMessageBoard");
+                    if (messageBoard == null) {
+                        response.sendRedirect("login");
+                        return;
+                    }
                     int length = messageBoard.getMessageNum();
                     for (int i = 0; i < length; ++i) {
                         String message = messageBoard.getMessageTextAt(i);

@@ -17,10 +17,13 @@ public class QuestionListDispatcher extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if (!(boolean) session.getAttribute("loginFail")) response.sendRedirect("login.jsp");
+        if ((boolean) session.getAttribute("loginFail")) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
         User user = (User) session.getAttribute("loginUser");
         String type = user.getUserType();
-        RequestDispatcher dispatcher = request.getRequestDispatcher(type + "HomePage.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher(type + "QuestionListPage.jsp");
         dispatcher.forward(request, response);
     }
 

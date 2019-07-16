@@ -97,7 +97,7 @@ public class ExaminationOperator {
      */
     public List<Examination> getExaminationList() {
         List<Examination> examinations = new LinkedList<Examination>();
-        Integer[] eidArray = connector.getIdArrays("eid", "where end_time > current_time order by begin_time");
+        Integer[] eidArray = connector.getIdArrays("examination", "where end_time > current_time order by begin_time");
         for (Integer eid : eidArray) {
             examinations.add(getExaminationById(eid));
         }

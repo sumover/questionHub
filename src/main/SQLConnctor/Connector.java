@@ -148,7 +148,7 @@ public class Connector {
     public Integer[] getIdArrays(String table, String conditions) {
         List<Integer> list = new LinkedList<Integer>();
         try {
-            String sql = "select id from " + table + conditions == null ? " ;" : conditions + " ;";
+            String sql = "select id from " + table + ((conditions == null) ? " ;" : " " + conditions + " ;");
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet set = statement.executeQuery();
             while (set.next()) list.add(set.getInt(1));
