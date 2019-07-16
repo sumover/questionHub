@@ -18,23 +18,23 @@
 <table>
     <tr>
         <td>
-            <a href="">考试管理</a>
+            <a href="examinationManagement">考试管理</a>
         </td>
     </tr>
 
     <tr>
         <td>
-            <a href="">试卷管理</a>
+            <a href="examinationPaperManagement">试卷管理</a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="">题目管理</a>
+            <a href="questionManagement">题目管理</a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="">学生信息管理</a>
+            <a href="studentInfoManagement">学生信息管理</a>
         </td>
     </tr>
 </table>

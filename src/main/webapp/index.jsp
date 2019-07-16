@@ -7,7 +7,7 @@
         <%
             response.encodeRedirectURL("UTF-8");
             response.sendRedirect("login");
-//            return;
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("login")
         %>
     </body>
 </html>
