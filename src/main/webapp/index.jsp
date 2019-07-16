@@ -7,8 +7,8 @@
         <%
             response.encodeRedirectURL("UTF-8");
             response.sendRedirect("login");
+//            return;
         %>
-
     </body>
 </html>
 
