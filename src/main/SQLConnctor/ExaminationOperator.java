@@ -73,20 +73,7 @@ public class ExaminationOperator {
                         "where id=?;",
                 new String[]{Integer.toString(eid)}
         );
-        getExaminationFromResult(resultSet, examination);
-//        try {
-//            if (!resultSet.next()) return null;
-//            examination.setId(eid);
-//            examination.setExaminationPaper(paperOperator.getExaminationPaper(resultSet.getInt(2)));
-//            examination.setCreateTeacher((Teacher) loginChecker.getUser(resultSet.getInt(3)));
-//            examination.setCreateTime(Examination.parseFromSQL(resultSet.getString(4)));
-//            examination.setBeginTime(Examination.parseFromSQL(resultSet.getString(5)));
-//            examination.setEndTime(Examination.parseFromSQL(resultSet.getString(6)));
-//            examination.setStatus(resultSet.getString(7));
-//            resultSet.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        if (!getExaminationFromResult(resultSet, examination)) return null;
         return examination;
     }
 

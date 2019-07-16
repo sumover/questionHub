@@ -57,4 +57,14 @@ create table examination
 )
   comment '考试信息';
 
+-- 答案表创建
+create table answer
+(
+  id          int auto_increment comment 'id...这个...'
+    primary key,
+  ans         varchar(20) not null comment '答案, 为了保证扩展性, 我们用varchar保存, 到时候解析就是了',
+  question_id int         not null comment '答案对应题目库的id'
+)
+  comment '答案表';
+
 

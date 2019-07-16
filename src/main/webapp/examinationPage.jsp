@@ -39,8 +39,7 @@
             for (Options options : question.getOptions()) {
         %>
         <tr>
-            <td style="text-align: center">
-                <%="" + options.c + "." + options.describe%>
+            <td style="text-align: center"><%="" + options.c + "." + options.describe%>
             </td>
         </tr>
         <%

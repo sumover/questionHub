@@ -8,6 +8,7 @@
 --%>
 <%@ page import="main.Module.Examination" %>
 <%@ page import="java.util.List" %>
+<%@ page import="main.Module.ExaminationPaper" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <html>
@@ -19,26 +20,23 @@
 <%
     List<Examination> examinationList = (List<Examination>) session.getAttribute("examinationList");
     for (int i = 0; i < examinationList.size(); ++i) {
-        String beginTime = Examination.parseFromDate(examinationList.get(i).getBeginTime());
-        String endTime = Examination.parseFromDate(examinationList.get(i).getEndTime());
-        String name = examinationList.get(i).getExaminationPaper().getName();
-        int eid = examinationList.get(i).getId();
+        Examination examination = examinationList.get(i);
+        ExaminationPaper examinationPaper = examination.getExaminationPaper();
 %>
 <table>
     <tr>
         <td>
-            <a href="examination?eid=${eid}">${name}</a>
+            <a href="examination?eid=<%=examination.getId()%>"><%=examinationPaper.getName()%>></a>
         </td>
         <td>
-            ${beginTime}
+            <%=examination.getBeginTime()%>
         </td>
         <td>
-            ${endTIme}
+            <%=examination.getEndTime()%>
         </td>
     </tr>
 </table>
-<%
-    }
-%>
+
+<%}%>
 </body>
 </html>
